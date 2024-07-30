@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <!-- import Bootstrap-->
         <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+        <!-- end import Bootstrap-->
     </head>
     <body>
         <div style="text-align: center;">
-            <script>
-               
+            <script type="text/javascript">
+                document.write(greet())
             </script>
             <b>Hello</b>
         </div> 
+        <button type="submit">
+            Login
+        </button>
         <!-- import Bootstrap-->
         <script src="asset/css/bootstrap.min.css"></script>
         <script src="asset/js/bootstrap.min.js"></script>
+        <!-- end import Bootstrap-->
     </body>
     <script>
-        function greet(){
+        function greet()
+        {
             const d = new Date();
-            let time = d.getTime(); 
+            let h = addZero(d.getUTCHours());
+            let m = addZero(d.getUTCMinutes());
+            let s = addZero(d.getUTCSeconds());
+            let time = h + ":" + m + ":" + s;
+            document.write(time);
         }
     </script>
 </html>
