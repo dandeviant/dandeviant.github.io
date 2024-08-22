@@ -30,6 +30,7 @@
         <script>
             function startTime() {
               const today = new Date();
+              let dayNum = today.getDay();
               let h = today.getHours();
               let m = today.getMinutes();
               let s = today.getSeconds();
@@ -38,8 +39,9 @@
               value = checkHour(h);
               hour = value[0]; 
               ampm = value[1];
+              day = checkDay(dayNum);
               y = checkAP(ampm);
-              document.getElementById('txt').innerHTML = y + " " + h + ":" + m + ":" + s;
+              document.getElementById('txt').innerHTML = day + " - " + y + " " + hour + ":" + m + ":" + s;
               setTimeout(startTime, 1000);
             }
             
@@ -56,7 +58,7 @@
                     x = x;
                     y = true;
                 }
-                return x, y;
+                return [x, y];
             }
             function checkAP(y){
                 if (y == false){
@@ -65,6 +67,14 @@
                 else {x = "午前";}
 
                 return x;
+            }
+            function checkDay(x){
+                switch(x){
+                    case 4:
+                        day = "木曜日";
+                        break;
+                }
+                return day;
             }
             
         </script>
