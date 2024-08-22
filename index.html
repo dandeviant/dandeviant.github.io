@@ -6,8 +6,12 @@
         <link rel="stylesheet" href="asset/css/bootstrap.min.css">
         <!-- end import Bootstrap-->
     </head>
-    <body>
+    <body onload="startTime()">
         <div style="text-align: center;">
+            <div id="txt" lang="ja"></div>
+            <div lang="ja">
+                申し訳ございません
+            </div>
             <b>Gonna put a lot of shit in here sooner or later</b><br>
             <a href="https://github.com/dandeviant" style="color: white;">github.com/dandeviant</a>
             <br>
@@ -21,5 +25,46 @@
         <script src="asset/css/bootstrap.min.css"></script>
         <script src="asset/js/bootstrap.min.js"></script>
         <!-- end import Bootstrap-->
+        <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              value = checkHour(h);
+              hour = value[0]; 
+              ampm = value[1];
+              y = checkAP(ampm);
+              document.getElementById('txt').innerHTML = y + " " + h + ":" + m + ":" + s;
+              setTimeout(startTime, 1000);
+            }
+            
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+            function checkHour(x) {
+                if (x > 12){
+                    x = x-12;
+                    y = false;
+                }
+                else {
+                    x = x;
+                    y = true;
+                }
+                return x, y;
+            }
+            function checkAP(y){
+                if (y == false){
+                    x = "午後";
+                }
+                else {x = "午前";}
+
+                return x;
+            }
+            
+        </script>
     </body>
 </html>
