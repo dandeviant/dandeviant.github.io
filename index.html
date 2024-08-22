@@ -9,9 +9,10 @@
     </head>
     <body onload="startTime()">
         <div style="text-align: center;">
-            <div id="txt" lang="ja"></div>
+            <div id="time" lang="ja"></div>
+            <div id="date" lang="ja"></div><br>
             <div lang="ja">
-                申し訳ございません
+                <b>申し訳ございません</b>
             </div>
             <br>
             <b>Gonna put a lot of shit in here sooner or later</b><br>
@@ -41,8 +42,12 @@
             //   hour = value[0]; 
             //   ampm = value[1];
               day = checkDay(dayNum);
+              date = today.getDate();
+              month = today.getMonth();
+              year = today.getFullYear();
               y = checkAP(ampm);
-              document.getElementById('txt').innerHTML = day + "<br> - " + y + " " + hour + ":" + m + ":" + s;
+              document.getElementById('date').innerHTML = year + "年" + month + "月" + date + "日";
+              document.getElementById('time').innerHTML = day + "<br>" + y + " " + hour + ":" + m + ":" + s;
               setTimeout(startTime, 1000);
             }
             
