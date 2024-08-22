@@ -37,8 +37,9 @@
               m = checkTime(m);
               s = checkTime(s);
               value = checkHour(h);
-              hour = value[0]; 
-              ampm = value[1];
+              [hour, ampm] = checkHour(h);
+            //   hour = value[0]; 
+            //   ampm = value[1];
               day = checkDay(dayNum);
               y = checkAP(ampm);
               document.getElementById('txt').innerHTML = day + " - " + y + " " + hour + ":" + m + ":" + s;
