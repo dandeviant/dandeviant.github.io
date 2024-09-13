@@ -6,9 +6,42 @@
         <!-- import Bootstrap-->
         <link rel="stylesheet" href="asset/css/bootstrap.min.css">
         <!-- end import Bootstrap-->
+
+        <style>
+
+            .body{
+                height: 100%;
+            }
+            .container {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        </style>
     </head>
     <body>
-        Hell0 w0r1d
+        <div class="container h-100 my-auto justify-content-center align-items-center">
+            <form style="text-align: center;">
+                <div class="row w-100">
+                    <div class="col">
+                        <label for="vlanInput">VLAN List Input</label>   
+                        <input type="text" class="form-control" id="vlanInput" placeholder="VLAN list...">
+                    </div>
+                    <div class="col-sx-3">
+                        <label for="vlanInput">VLAN List Input</label>   
+                        <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
         <!-- import Bootstrap-->
         <script src="asset/css/bootstrap.min.css"></script>
         <script src="asset/js/bootstrap.min.js"></script>
