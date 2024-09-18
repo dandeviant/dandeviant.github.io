@@ -2,27 +2,66 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
+        <!-- Required meta tags -->
+        
         <title>Config Generator</title>
         <!-- import Bootstrap-->
-        <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="asset/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- end import Bootstrap-->
 
         <style>
             body{
                 background-color:darkslategrey;
                 color: white;
+                /* transform-origin: 0.0; */
+                transform: scale(0.9);
+                font-size: 18px;
+                width: 100%;
+                padding: 0;
             }   
+
             .container-1{
-                margin: auto;
+                /* margin: auto;
                 display: flex;
                 top: 60%;
                 left: 10%;
                 right: 10%;
-                width: 650px;
+                width: 70%;
                 justify-content: center;
-                align-items: center;
+                align-items: center; */
+                width: 100%;
+            }
+
+            .dropdown {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .btn{
+                width: 100%;
+                border-radius: 0%;
+                position: relative;
+            }
+
+            .dropdown-menu{
+                width: 100%;
+                border-radius: 0%;
+                padding: 0%;
+                right: 10%;
+                left: 10%;
+            }
+
+            .switch-model{
+                border-radius: 0;
+                position: relative;
+            }
+
+            .input-group-prepend{
+                
             }
         </style>
     </head>
@@ -35,26 +74,108 @@
                     <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..."></textarea>
             </form>
         </div> -->
-        <div class="container-1 row border justify-content-center align-items-center">    
-            <form style="text-align: center;">
+        <div class="container-1 border">    
+            <form style="text-align: center; width: 100%;" class="">
                 <div class="row">
                     <div class="col">
                         <label for="vlanInput">VLAN List Input</label>   
-                        <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..."></textarea>
+                        <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..." style="width: 100%;"></textarea>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col" style="padding: 20px;">
+                                <label for="vlanInput">Switch Model</label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center" style="width: 100%; ">
+                            <!-- <div class="col">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend" style="width: 32%;">
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" style="width: 100%; text-align: center;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Select Model
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">C3560X</a>
+                                            <a class="dropdown-item" href="#">Cat 3650</a>
+                                            <a class="dropdown-item" href="#">Cat9k (C9300, C9300L)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" id="vlanInput" placeholder="Switch Model" style="border-radius: 0; border: none; outline: none;" disabled>               
+                                </div>
+                            </div> -->
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend" style="width: 30%; position: relative; text-align: right; padding-right: 0px;">
+                                        <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" style="width: 100%; text-align: center;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Select Model
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">C3560X</a>
+                                        <a class="dropdown-item" href="#">Cat 3650</a>
+                                        <a class="dropdown-item" href="#">Cat9k (C9300, C9300L)</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" id="vlanInput" placeholder="Switch Model" style="border-radius: 0; border: none; outline: none;" disabled>               
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
-                        <label for="vlanInput">VLAN List Input</label>   
-                        <input type="text" class="form-control" id="vlanInput" placeholder="VLAN list...">
+                        <div class="row">
+                            <div class="col" style="padding: 20px;">
+                                <label for="vlanSpecify">VLAN specify</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend" style="width: 25%;">
+                                        <span class="input-group-text w-100" style="vertical-align:middle; ">CCTV</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="vlanInput" placeholder="VLAN">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend" style="width: 25%;">
+                                        <span class="input-group-text w-100">ISC</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="vlanInput" placeholder="VLAN" style="border-radius: 0; border: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend" style="width: 25%;">
+                                        <span class="input-group-text w-100" style="vertical-align:middle; ">QUA</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="VLAN" aria-label="VLAN" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="col">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
-        <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..." style="font-size:x-small ;resize: both; width: 30%; max-width: 40%; height: 40px; max-height: 100px;"></textarea>
-
+        <!-- <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..." style="font-size:x-small ;resize: both; width: 30%; max-width: 40%; height: 40px; max-height: 100px;"></textarea> -->
 
         <!-- import Bootstrap-->
-        <script src="asset/css/bootstrap.min.css"></script>
-        <script src="asset/js/bootstrap.min.js"></script>
+        <!-- <script type="text/javascript" src="asset/css/bootstrap.min.css"></script>
+        <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap/bootstrap-dropdown.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <!-- end import Bootstrap-->
     </body>
 </html>
