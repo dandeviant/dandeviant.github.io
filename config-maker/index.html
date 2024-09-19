@@ -64,6 +64,7 @@
                 
             }
         </style>
+        <script type="text/javascript" src="scripts.js"></script>
     </head>
     <body class="justify-content-center align-items-center">
         <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px;">
@@ -113,17 +114,23 @@
                             </div> -->
                             <div class="col">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="width: 200px; position: relative; text-align: right; padding-right: 0px;">
-                                        <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" style="width: 100%; text-align: center;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <!-- <div class="input-group-prepend" style="width: 200px; position: relative; text-align: right; padding-right: 0px;">
+                                        <button id="switchModel" onclick="switchModel()" class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" style="width: 100%; text-align: center;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Select Model
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">C3560X</a>
-                                        <a class="dropdown-item" href="#">Cat 3650</a>
-                                        <a class="dropdown-item" href="#">Cat9k (C9300, C9300L)</a>
+                                        <a class="dropdown-item" href="#" onclick="switchModel()">C3560X</a>
+                                        <a class="dropdown-item" href="#" onclick="switchModel()">Cat 3650</a>
+                                        <a class="dropdown-item" href="#" onclick="switchModel()">Cat9k (C9300, C9300L)</a>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" id="vlanInput" placeholder="Switch Model" style="width: 100px; border-radius: 0; border: none; outline: none;" disabled>               
+                                    <input type="text" class="form-control" id="switchModelOutput" placeholder="Switch Model" style="width: 100px; border-radius: 0; border: none; outline: none;" disabled>                -->
+                                    <select class="form-select w-100" aria-label="selectSwitchModel" style="font-size: 18px; padding: 8px;">
+                                        <option selected>Select switch model</option>
+                                        <option value="C3560X">Cat3560X</option>
+                                        <option value="Cat3650">Cat3650</option>
+                                        <option value="Cat9k">Cat9k</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -175,8 +182,15 @@
             <textarea class="form-control" id="result" placeholder="Generated Script here" style="width: 100%; height: 300px; max-height:600px; font-size: 14px; font-family: Consolas;" disabled></textarea>
             <br>
         </div>
-        
         <!-- <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..." style="font-size:x-small ;resize: both; width: 30%; max-width: 40%; height: 40px; max-height: 100px;"></textarea> -->
+        
+
+
+
+
+
+
+
 
         <!-- import Bootstrap-->
         <!-- <script type="text/javascript" src="asset/css/bootstrap.min.css"></script>
