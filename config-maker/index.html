@@ -17,10 +17,10 @@
                 background-color:darkslategrey;
                 color: white;
                 /* transform-origin: 0.0; */
-                transform: scale(0.9);
+                /* transform: scale(0.9);
                 font-size: 24px;
                 width: 100%;
-                padding: 0;
+                padding: 0; */
             }   
 
             .container-1{
@@ -32,7 +32,10 @@
                 width: 70%;
                 justify-content: center;
                 align-items: center; */
+                transform: scale(0.9);
+                font-size: 24px;
                 width: 100%;
+                padding: 0;
             }
 
             .dropdown {
@@ -60,20 +63,72 @@
                 position: relative;
             }
 
-            .input-group-prepend{
-                
+            .btnGenerate {
+                width: 100%;
+                font-size: 18px;
+
             }
         </style>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
     <body class="justify-content-center align-items-center">
-        <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px;">
-            Go Back...
-        </a>
+
+        <!-- ############################################### -->
+        <!-- START OF NAVBAR -->
+        <!-- ############################################### -->
+
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Config Generator<span style="font-size: 12px">&nbsp;&nbsp;&nbsp;by dandeviant</span></a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
+            </div>
+          </nav>
+
+          <!-- ############################################### -->
+          <!-- END OF NAVBAR -->
+          <!-- ############################################### -->
+
+        <br>
+
+
+        
 
         <!-- ############################################### -->
 
-        <div class="container-1">    
+        <div class="container-1"> 
+            <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px;">
+                Go Back...
+            </a>
             <form style="text-align: center; width: 100%;" class="">
                 <div class="row">
                     <div class="col">
@@ -93,7 +148,7 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <select id="selectSwitchModel" onchange="switchModel()" class="form-select w-100" aria-label="selectSwitchModel" style="font-size: 18px; padding: 8px;">
-                                        <option selected>Select switch model</option>
+                                        <option selected value="">Select switch model</option>
                                         <option value="C3560X">Cat3560X</option>
                                         <option value="Cat3650">Cat3650</option>
                                         <option value="Cat9k">Cat9k (Cat9300, Cat9300L, Cat9300 10G, etc.)</option>
@@ -136,7 +191,7 @@
                                 </div>
                             </div>
                             <div class="col">
-
+                                <button type="submit" id="btnGenerate" onclick="generateScript()" class="btnGenerate btn-danger">Generate</button>
                             </div>
                         </div>
                     </div>
