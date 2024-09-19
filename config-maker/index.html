@@ -76,6 +76,10 @@
             .container {
                 width: 100%;
             }
+
+            .navbar-brand{
+                text-align: left;
+            }
         </style>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
@@ -86,15 +90,26 @@
         <!-- ############################################### -->
 
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Config Generator<span style="font-size: 12px">&nbsp;&nbsp;&nbsp;by dandeviant</span></a>
+            <a class="navbar-brand" href="../index.html">
+                Config Generator
+                <span style="font-size: 12px">&nbsp;&nbsp;&nbsp;by dandeviant</span>&nbsp;&nbsp;
+                <!-- <button class="navbar-brand btn btn-danger" role="button" style="width: 150px; border-radius: 15px; text-align: center;">Go Back...</button> -->
+            </a>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item active" style="text-align: center;">
+                    <img src="asset/alya chibi.png" width="150px">
+                    <img src="asset/yuki chibi.png" width="110px">
+                </li>
+                <li class="nav-item active" style="text-align: center; left:100px">
+                    <a class="nav-link btn-danger" href="../index.html">Go Back</a>
+                </li>
+                <!-- <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -113,7 +128,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
+                </li> -->
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -132,13 +147,13 @@
         
 
         <!-- ############################################### -->
-        <div class="container h-100 d-flex justify-content-center align-items-center border" style="width: 80%;">
+        <!-- <div class="container h-100 d-flex justify-content-center align-items-center" style="width: 80%;">
             <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px; border-radius: 15px;">
                 Go Back...
             </a>
-        </div>
-        <br><br>
-        <div class="container h-100 d-flex justify-content-center align-items-center border" style="width: 80%;"> 
+        </div> -->
+        
+        <div class="container h-100 d-flex justify-content-center align-items-center" style="width: 80%;"> 
             <br><br>
             <form style="text-align: center; width: 100%;" class="">
                 <div class="row">
@@ -184,7 +199,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="input-group mb-3">
+                                <div class="input-group mb-3 my-auto">
                                     <div class="input-group-prepend" style="width: 70px;">
                                         <span class="input-group-text w-100">ISC</span>
                                     </div>
@@ -194,15 +209,15 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="width: 70px;">
+                                <div class="input-group mb-3 my-auto">
+                                    <div class="input-group-prepend" style="width: 70px; vertical-align: middle;">
                                         <span class="input-group-text w-100" style="vertical-align:middle; ">QUA</span>
                                     </div>
                                     <input type="text" class="form-control" id="vlanQUAInput" placeholder="VLAN" aria-label="VLAN" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="row">
+                                <div class="row h-100" style="vertical-align: middle;">
                                     <div class="col">
                                         <button type="button" id="btnGenerate" onclick="generateScript()" class="btnGenerate btn-primary" style="border-radius: 10px; border: none; height: 100%;">Generate</button>
                                     </div>
@@ -211,7 +226,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
