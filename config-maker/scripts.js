@@ -79,3 +79,14 @@ function vlanInput (scriptresult) {
 
     return scriptresult;
 }
+
+function copy() {
+    copyText = document.getElementById('scriptGenerated').value;
+    if (copyText == "") {
+        alert("Nothing To Copy");
+    }
+    else {
+        navigator.clipboard.writeText(copyText);
+        alert("Script Copied");
+    }
+}

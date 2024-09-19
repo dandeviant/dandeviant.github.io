@@ -34,8 +34,12 @@
                 align-items: center; */
                 transform: scale(0.9);
                 font-size: 24px;
-                width: 100%;
+                width: 70%;
+                left: 15%;
+                right: 15%;
                 padding: 0;
+                min-height: 100%;
+                /* display: flex; */
             }
 
             .dropdown {
@@ -67,6 +71,10 @@
                 width: 100%;
                 font-size: 18px;
 
+            }
+
+            .container {
+                width: 100%;
             }
         </style>
         <script type="text/javascript" src="scripts.js"></script>
@@ -124,11 +132,14 @@
         
 
         <!-- ############################################### -->
-
-        <div class="container-1"> 
-            <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px;">
+        <div class="container h-100 d-flex justify-content-center align-items-center border" style="width: 80%;">
+            <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px; border-radius: 15px;">
                 Go Back...
             </a>
+        </div>
+        <br><br>
+        <div class="container h-100 d-flex justify-content-center align-items-center border" style="width: 80%;"> 
+            <br><br>
             <form style="text-align: center; width: 100%;" class="">
                 <div class="row">
                     <div class="col">
@@ -193,10 +204,10 @@
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
-                                        <button type="button" id="btnGenerate" onclick="generateScript()" class="btnGenerate btn-primary">Generate</button>
+                                        <button type="button" id="btnGenerate" onclick="generateScript()" class="btnGenerate btn-primary" style="border-radius: 10px; border: none; height: 100%;">Generate</button>
                                     </div>
                                     <div class="col">
-                                        <button type="clear" id="btnClear" class="btnGenerate btn-danger">Clear</button>
+                                        <button type="clear" id="btnClear" class="btnGenerate btn-danger" style="border-radius: 10px; border: none; height: 100%;">Clear</button>
                                     </div>
                                 </div>
                             </div>
@@ -207,27 +218,25 @@
             </form>
         </div>
         <br>
-        <div class="container-1" style="text-align: center;">
+        <div class="container h-100 justify-content-center align-items-right" style="text-align: center;">
             <label for="vlanInput" sty>Script Generated</label> 
         </div>
-        <div class="container-1" >
+        <div class="container h-100 justify-content-center align-items-right" >
             <!-- <button type="clear" id="btnClear" class="btn btn-danger" style="width: 100px;">Clear</button>
             <button class="btn btn-primary" onclick="copy()" style="width: 100px;">Copy</button> -->
             <div class="row">
                 <div class="col" style="width: 90%;">
-
                 </div>
                 <div class="col" style="width: 10%; text-align: right;">
                     <div class="row">
                         <div class="col">
-                            <button type="button" id="btnGenerate" onclick="copy()" class="btnGenerate btn btn-primary" style="width: 200px; border-radius: 10px;">Copy</button>
-                            <button type="clear" id="btnClear" class="btnGenerate btn btn-danger" style="width: 200px; border-radius: 10px;">Clear</button>
+                            <button type="button" id="btnGenerate" onclick="copy()" class="btnGenerate btn btn-primary" style="width: 200px; border-radius: 10px;">Copy Scripts</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-1" style="text-align: center;">
+        </div><br>
+        <div class="container h-100 d-flex justify-content-center align-items-center" style="text-align: center;">
             <textarea class="form-control" id="scriptGenerated" placeholder="Generated Script here" style="width: 100%; height: 300px; max-height:600px; font-size: 14px; font-family: Consolas;" disabled></textarea>
             <br>
         </div>
