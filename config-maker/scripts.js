@@ -1,4 +1,5 @@
-function reset() {document.getElementById('scriptGenerated').value = "";}
+function resetScript() { document.getElementById('scriptGenerated').value = '';}
+
 function switchModel() {selectModel = document.getElementById('selectSwitchModel').value;}
 
 function generateScript() {
