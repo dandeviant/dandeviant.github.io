@@ -70,14 +70,9 @@
         <a href="../index.html" class="btn btn-danger" role="button" style="width: 150px;">
             Go Back...
         </a>
-        <!-- <div class="container w-100 my-auto justify-content-center align-items-center">
-            <form style="text-align: center;">
-                    <label for="vlanInput">VLAN List Input</label>   
-                    <input type="text" class="form-control" id="vlanInput" placeholder="VLAN list..." class="w-50">
-                    <label for="vlanInput">VLAN List Input</label>   
-                    <textarea class="form-control" id="vlanInput2" placeholder="VLAN list..."></textarea>
-            </form>
-        </div> -->
+
+        <!-- ############################################### -->
+
         <div class="container-1">    
             <form style="text-align: center; width: 100%;" class="">
                 <div class="row">
@@ -95,36 +90,8 @@
                             </div>
                         </div>
                         <div class="row justify-content-center align-items-center" style="width: 100%; ">
-                            <!-- <div class="col">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="width: 32%;">
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" style="width: 100%; text-align: center;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Select Model
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">C3560X</a>
-                                            <a class="dropdown-item" href="#">Cat 3650</a>
-                                            <a class="dropdown-item" href="#">Cat9k (C9300, C9300L)</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control" id="vlanInput" placeholder="Switch Model" style="border-radius: 0; border: none; outline: none;" disabled>               
-                                </div>
-                            </div> -->
                             <div class="col">
                                 <div class="input-group mb-3">
-                                    <!-- <div class="input-group-prepend" style="width: 200px; position: relative; text-align: right; padding-right: 0px;">
-                                        <button id="switchModel" onclick="switchModel()" class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" style="width: 100%; text-align: center;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Select Model
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#" onclick="switchModel()">C3560X</a>
-                                        <a class="dropdown-item" href="#" onclick="switchModel()">Cat 3650</a>
-                                        <a class="dropdown-item" href="#" onclick="switchModel()">Cat9k (C9300, C9300L)</a>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control" id="switchModelOutput" placeholder="Switch Model" style="width: 100px; border-radius: 0; border: none; outline: none;" disabled>                -->
                                     <select id="selectSwitchModel" onchange="switchModel()" class="form-select w-100" aria-label="selectSwitchModel" style="font-size: 18px; padding: 8px;">
                                         <option selected>Select switch model</option>
                                         <option value="C3560X">Cat3560X</option>
@@ -147,7 +114,7 @@
                                     <div class="input-group-prepend" style="width: 70px;">
                                         <span class="input-group-text w-100" style="vertical-align:middle; ">CCTV</span>
                                     </div>
-                                    <input type="text" class="form-control" id="vlanInput" placeholder="VLAN">
+                                    <input type="text" class="form-control" id="vlanCCTVInput" placeholder="VLAN">
                                 </div>
                             </div>
                             <div class="col">
@@ -155,7 +122,7 @@
                                     <div class="input-group-prepend" style="width: 70px;">
                                         <span class="input-group-text w-100">ISC</span>
                                     </div>
-                                    <input type="text" class="form-control" id="vlanInput" placeholder="VLAN" style="border-radius: 0; border: none;">
+                                    <input type="text" class="form-control" id="vlanISCInput" placeholder="VLAN" style="border-radius: 0; border: none;">
                                 </div>
                             </div>
                         </div>
@@ -165,7 +132,7 @@
                                     <div class="input-group-prepend" style="width: 70px;">
                                         <span class="input-group-text w-100" style="vertical-align:middle; ">QUA</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="VLAN" aria-label="VLAN" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control" id="vlanQUAInput" placeholder="VLAN" aria-label="VLAN" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="col">
