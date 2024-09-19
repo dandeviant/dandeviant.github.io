@@ -167,7 +167,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col" style="padding: 10px;">
-                                <label for="vlanInput">Switch Model</label>
+                                <label for="switchModel">Switch Model</label>
                             </div>
                         </div>
                         <div class="row justify-content-center align-items-center" style="width: 100%; ">
@@ -222,7 +222,7 @@
                                         <button type="button" id="btnGenerate" onclick="generateScript()" class="btnGenerate btn-primary" style="border-radius: 10px; border: none; height: 100%;">Generate</button>
                                     </div>
                                     <div class="col">
-                                        <button type="clear" id="btnClear" class="btnGenerate btn-danger" style="border-radius: 10px; border: none; height: 100%;">Clear</button>
+                                        <button type="reset" id="btnClear" class="btnGenerate btn-danger" style="border-radius: 10px; border: none; height: 100%;">Clear</button>
                                     </div>
                                 </div>
                             </div>
@@ -233,19 +233,25 @@
         </div>
         <br>
         <div class="container h-100 justify-content-center align-items-right" style="text-align: center;">
-            <label for="vlanInput" sty>Script Generated</label> 
+            <label for="scriptGenerated" sty>Script Generated</label> 
         </div>
         <div class="container h-100 justify-content-center align-items-right" >
             <!-- <button type="clear" id="btnClear" class="btn btn-danger" style="width: 100px;">Clear</button>
             <button class="btn btn-primary" onclick="copy()" style="width: 100px;">Copy</button> -->
             <div class="row">
-                <div class="col" style="width: 90%;">
+                <div class="col" style="width: 50%;">
+                    <div class="row">
+                        <div class="col">
+                            <button type="reset" id="btnGenerate" onclick="reset()" class="btnGenerate btn btn-primary" style="width: 200px; border-radius: 10px;">Reset Scripts</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="col" style="width: 10%; text-align: right;">
                     <div class="row">
                         <div class="col">
                             <button type="button" id="btnGenerate" onclick="copy()" class="btnGenerate btn btn-primary" style="width: 200px; border-radius: 10px;">Copy Scripts</button>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -262,8 +268,11 @@
 
 
 
-
-
+        <br><br><br><br>
+        <div class="container h-100 justify-content-center align-items-right" style="text-align: center;">
+            <label for="scriptGenerated" sty>Made for fun by Daniel :)</label> 
+        </div>
+        <br><br><br><br>
         <!-- import Bootstrap-->
         <!-- <script type="text/javascript" src="asset/css/bootstrap.min.css"></script>
         <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>

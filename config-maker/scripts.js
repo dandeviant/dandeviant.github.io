@@ -1,7 +1,5 @@
-function switchModel() {
-    selectModel = document.getElementById('selectSwitchModel').value;
-    console.log("Value = " + selectModel);
-}
+function reset() {document.getElementById('scriptGenerated').value = "";}
+function switchModel() {selectModel = document.getElementById('selectSwitchModel').value;}
 
 function generateScript() {
     vlanCCTV = document.getElementById('vlanCCTVInput').value;
@@ -13,17 +11,27 @@ function generateScript() {
     document.getElementById('scriptGenerated').placeholder = "";
 
     scriptresult = "";
-
     scriptresult = vlanInput(scriptresult);
-
     scriptresult += "\n\n";
-
+    scriptresult = vlanDefault(scriptresult);
+    scriptresult += "\n\n";
     scriptresult = selectSwitchModel(scriptresult);
 
     document.getElementById("scriptGenerated").value = scriptresult;
 
 }   
 
+function vlanInput (scriptresult) {
+    vlanInputText = document.getElementById('vlanInput').value;
+
+    if (vlanInputText == "") {
+        scriptresult += "===================== ERROR =====================\n";
+        scriptresult += "NO VLAN INPUT FOUND" + "\n";
+        scriptresult += "===================== ERROR =====================\n";
+    }
+
+    return scriptresult;
+}
 
 function selectSwitchModel (scriptresult) {
     selectModel = document.getElementById('selectSwitchModel').value;
@@ -42,7 +50,7 @@ function selectSwitchModel (scriptresult) {
 }
 
 
-function vlanInput (scriptresult) {
+function vlanDefault (scriptresult) {
     if (vlanCCTV == "" || vlanISC == "" || vlanQUA == "") {
         if (vlanCCTV == ""){
             if (error != ""){
@@ -90,3 +98,4 @@ function copy() {
         alert("Script Copied");
     }
 }
+
