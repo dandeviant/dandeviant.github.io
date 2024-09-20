@@ -1,0 +1,69 @@
+body{
+    background-color:darkslategrey;
+    color: white;
+    /* transform-origin: 0.0; */
+    /* transform: scale(0.9);
+    font-size: 24px;
+    width: 100%;
+    padding: 0; */
+}   
+
+.container-1{
+    /* margin: auto;
+    display: flex;
+    top: 60%;
+    left: 10%;
+    right: 10%;
+    width: 70%;
+    justify-content: center;
+    align-items: center; */
+    transform: scale(0.9);
+    font-size: 24px;
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    padding: 0;
+    min-height: 100%;
+    /* display: flex; */
+}
+
+.dropdown {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.btn{
+    width: 100%;
+    border-radius: 0%;
+    position: relative;
+}
+
+.dropdown-menu{
+    width: 100%;
+    border-radius: 0%;
+    padding: 0%;
+    right: 10%;
+    left: 10%;
+}
+
+.switch-model{
+    border-radius: 0;
+    position: relative;
+}
+
+.btnGenerate {
+    width: 100%;
+    font-size: 18px;
+
+}
+
+.container {
+    width: 100%;
+}
+
+.navbar-brand{
+    text-align: left;
+}
+
+/* MODAL CSS */
