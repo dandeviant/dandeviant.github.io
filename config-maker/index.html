@@ -165,13 +165,13 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="row">
+                        <div class="row border">
                             <div class="col" style="padding: 10px;">
                                 <label for="switchModel">Switch Model</label>
                             </div>
                         </div>
-                        <div class="row justify-content-center align-items-center" style="width: 100%; ">
-                            <div class="col">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col border w-100">
                                 <div class="input-group mb-3">
                                     <select id="selectSwitchModel" onchange="switchModel()" class="form-select w-100" aria-label="selectSwitchModel" style="font-size: 18px; padding: 8px;">
                                         <option selected value="">Select switch model</option>
@@ -182,8 +182,25 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row border" style="vertical-align: middle;">
+                            <div class="col" style="width: 50%; text-align: left;">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="reset" id="btnGenerate" onclick="resetScript()" class="btnGenerate btn btn-primary" style="width: 200px; border-radius: 10px;">Reset Scripts</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" style="width: 10%; text-align: right;">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" id="btnGenerate" onclick="copy()" class="btnGenerate btn btn-primary" style="width: 200px; border-radius: 10px;">Copy Scripts</button>
+                                    </div>
+               
+                                </div>
+                            </div>
+                        </div>            
                     </div>
-                    <div class="col">
+                    <div class="col border">
                         <div class="row">
                             <div class="col" style="padding: 10px;">
                                 <label for="vlanSpecify">VLAN specify</label>
