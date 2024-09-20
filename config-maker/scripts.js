@@ -100,3 +100,26 @@ function copy() {
     }
 }
 
+
+function scriptAlert() {
+    document.getElementById('scriptAlert').innerHTML = '\
+    <div class="row"> \
+        <div class="col"> \
+            <div class="alert alert-primary" role="alert"> \
+                Test Button Alert \
+            </div> \
+        </div> \
+    </div>';
+    
+    // <div class="row">
+    //     <div class="col">
+    //         <div class="alert alert-secondary" role="alert">
+    //             Test Button Alert
+    //         </div>
+    //     </div>
+    // </div>
+}
+
+function clearAlert() {
+    document.getElementById('scriptAlert').innerHTML = "";
+}

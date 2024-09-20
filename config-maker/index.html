@@ -272,6 +272,15 @@
                 </div>
             </div>
             <br>
+
+
+            <!-- Initial Alert Content -->
+            <div id="scriptAlert">
+            </div>
+             <!-- Initial Alert Content -->
+
+            <button type="button" id="btnGenerate" onclick="scriptAlert()" class="btnGenerate btn btn-success" style="width: 200px; border-radius: 10px; height: 40px;">Test Alert</button>
+            <button type="button" id="btnGenerate" onclick="clearAlert()" class="btnGenerate btn btn-danger" style="width: 200px; border-radius: 10px; height: 40px;">Clear Alert</button>
             <div class="row">
                 <div class="col">
                     <div class="alert alert-success" role="alert">
@@ -286,6 +295,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="container h-100 d-flex justify-content-center align-items-center" style="text-align: center;">
             <textarea class="form-control" id="scriptGenerated" placeholder="Generated Script here" style="width: 100%; height: 300px; max-height:600px; font-size: 14px; font-family: Consolas;" disabled></textarea>
