@@ -29,6 +29,7 @@ function vlanSplit() {
     //     copyText += "Vlan " + (x+1) + ": " + vlanArrayNum[x] + "\n";
     // }
     copyText = intCommand(copyText, vlanArrayNum, totalVlan);
+    copyText += '!############### END OF SCRIPT ###############';
     document.getElementById('scriptGenerated').value = copyText;
 }
 
@@ -49,7 +50,7 @@ function intCommand(copyText, vlanArrayNum, totalVlan) {
     for (x = 0; x < totalVlan; x++){
         copyText += 'interface GigabitEthernet0/' + (x+1);
         copyText += '\n  switchport access vlan ' + vlanArrayNum[x] + '\n';
-        copyText += '!!!\n';
+        copyText += '!\n';
     }
     return copyText;
 }
