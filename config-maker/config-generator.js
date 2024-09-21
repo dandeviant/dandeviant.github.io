@@ -12,22 +12,28 @@ function vlanSplit() {
     const vlanArrayNum = new Array();
     console.log(vlanArrayText[0]);
     totalVlan = vlanArrayText.length;
+
     for (x = 0; x < totalVlan; x++){
         vlanArrayNum[x] = Number(vlanArrayText[x]);
+        check = vlanArrayNum[x];
         if (Number.isNaN(vlanArrayNum[x]) == true) {
+            $('#modalCopyAlert').modal('hide');
+            document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">String detected in VLAN list. Generation aborted</div>';
             $('#modalCopyAlert').modal('show');
-            console.log("String Found. Aborted");
+            // console.log("String Found. Aborted");
             // document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
-            inputAlert();
+            // inputAlert();
             return;
         }
     }
+    
     $('#modalCopyAlert').modal('hide');
     copyText = "";
-    // for (x = 0; x < totalVlan; x++){
-    //     console.log("Vlan " + (x+1) + ": " + vlanArrayNum[x]);
-    //     copyText += "Vlan " + (x+1) + ": " + vlanArrayNum[x] + "\n";
-    // }
+    console.log("vlanArrayNum = " + vlanArrayNum);
+    for (x = 0; x < totalVlan; x++){
+        console.log("Vlan " + (x+1) + ": " + vlanArrayNum[x]);
+        copyText += "Vlan " + (x+1) + ": " + vlanArrayNum[x] + "\n";
+    }
     copyText = intCommand(copyText, vlanArrayNum, totalVlan);
     copyText += '!############### END OF SCRIPT ###############';
     document.getElementById('scriptGenerated').value = copyText;
