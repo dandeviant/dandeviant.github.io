@@ -1,29 +1,55 @@
 function vlanSplit() {
+
     vlanInputText = document.getElementById('vlanInput').value;
+    console.log("vlanInputText = " + vlanInputText);
 
-    const vlanArrayText = vlanInputText.split(" ");
+    if (vlanInputText == "") {
+        $('#modalCopyAlert').modal('show');
+        document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">No VLAN detected</div>';
+        return;
+    }
+    const vlanArrayText = vlanInputText.split(/\s+/);
     const vlanArrayNum = new Array();
-
     console.log(vlanArrayText[0]);
-
     totalVlan = vlanArrayText.length;
-
     for (x = 0; x < totalVlan; x++){
         vlanArrayNum[x] = Number(vlanArrayText[x]);
-        if (Number.isNaN(vlanArrayNum[x]) == false) {
+        if (Number.isNaN(vlanArrayNum[x]) == true) {
+            $('#modalCopyAlert').modal('show');
             console.log("String Found. Aborted");
-            document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
+            // document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
             inputAlert();
             return;
         }
     }
-
-    for (x = 0; x < totalVlan; x++){
-        console.log("Vlan " + (x+1) + ": " + vlanArrayNum[x]);
-    }
+    $('#modalCopyAlert').modal('hide');
+    copyText = "";
+    // for (x = 0; x < totalVlan; x++){
+    //     console.log("Vlan " + (x+1) + ": " + vlanArrayNum[x]);
+    //     copyText += "Vlan " + (x+1) + ": " + vlanArrayNum[x] + "\n";
+    // }
+    copyText = intCommand(copyText, vlanArrayNum, totalVlan);
+    document.getElementById('scriptGenerated').value = copyText;
 }
 
 function inputAlert() {
+    $('#modalCopyAlert').modal('hide');
     document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">String detected in VLAN list. Generation aborted</div>';
+    $('#modalCopyAlert').modal('show');
     // document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
+}
+
+
+function intCommand(copyText, vlanArrayNum, totalVlan) {
+    copyText = "";
+    // for (x = 0; x < totalVlan; x++){
+    //     console.log("Vlan intCommand " + (x+1) + ": " + vlanArrayNum[x]);
+    //     copyText += "Vlan intCommand " + (x+1) + ": " + vlanArrayNum[x] + "\n";
+    // }
+    for (x = 0; x < totalVlan; x++){
+        copyText += 'interface GigabitEthernet0/' + (x+1);
+        copyText += '\n  switchport access vlan ' + vlanArrayNum[x] + '\n';
+        copyText += '!!!\n';
+    }
+    return copyText;
 }
