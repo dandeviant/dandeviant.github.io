@@ -4,7 +4,7 @@ function vlanSplit() {
     console.log("vlanInputText = " + vlanInputText);
 
     if (vlanInputText == "") {
-        $('#modalCopyAlert').modal('show');
+        $('#modalCopyAlert').modal('show'); //display modal alert
         document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">No VLAN detected</div>';
         return;
     }
@@ -17,9 +17,9 @@ function vlanSplit() {
         vlanArrayNum[x] = Number(vlanArrayText[x]);
         check = vlanArrayNum[x];
         if (Number.isNaN(vlanArrayNum[x]) == true) {
-            $('#modalCopyAlert').modal('hide');
+            $('#modalCopyAlert').modal('hide'); //hide modal alert
             document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">String detected in VLAN list. Generation aborted</div>';
-            $('#modalCopyAlert').modal('show');
+            $('#modalCopyAlert').modal('show'); //display modal alert
             // console.log("String Found. Aborted");
             // document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
             // inputAlert();
@@ -40,9 +40,9 @@ function vlanSplit() {
 }
 
 function inputAlert() {
-    $('#modalCopyAlert').modal('hide');
+    $('#modalCopyAlert').modal('hide'); //hide modal alert
     document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">String detected in VLAN list. Generation aborted</div>';
-    $('#modalCopyAlert').modal('show');
+    $('#modalCopyAlert').modal('show'); //display modal alert
     // document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
 }
 
