@@ -14,13 +14,13 @@ function vlanSplit() {
     totalVlan = vlanArrayText.length;
 
     for (x = 0; x < totalVlan; x++){
-        vlanArrayNum[x] = Number(vlanArrayText[x]);
-        check = vlanArrayNum[x];
+        if (vlanArrayText[x] != ""){ 
+            vlanArrayNum[x] = Number(vlanArrayText[x]);
+        }
         if (Number.isNaN(vlanArrayNum[x]) == true) {
             $('#modalCopyAlert').modal('hide'); //hide modal alert
             document.getElementById('modalAlert').innerHTML = '<div class="alert alert-danger" role="alert">String detected in VLAN list. Generation aborted</div>';
             $('#modalCopyAlert').modal('show'); //display modal alert
-            // console.log("String Found. Aborted");
             // document.getElementById('modalAlert').innerHTML = '<div class="alert alert-success" role="alert">Copied to clipboard</div>';
             // inputAlert();
             return;
@@ -54,9 +54,12 @@ function intCommand(copyText, vlanArrayNum, totalVlan) {
     //     copyText += "Vlan intCommand " + (x+1) + ": " + vlanArrayNum[x] + "\n";
     // }
     for (x = 0; x < totalVlan; x++){
-        copyText += 'interface GigabitEthernet0/' + (x+1);
-        copyText += '\n  switchport access vlan ' + vlanArrayNum[x] + '\n';
-        copyText += '!\n';
+        if (vlanArrayNum[x] != undefined){
+            copyText += 'interface GigabitEthernet0/' + (x+1);
+            copyText += '\n  switchport access vlan ' + vlanArrayNum[x] + '\n';
+            copyText += '!\n';
+        }   
+        
     }
     return copyText;
 }
