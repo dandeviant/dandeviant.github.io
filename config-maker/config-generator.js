@@ -95,6 +95,11 @@ function generateScript(copyText, vlanArrayText, totalVlan) {
                 copyText += '!\n';
                 continue;
             }
+            else if (vlanArrayText[x] == "x" || vlanArrayText[x] == "X"){
+                copyText += '\n  switchport access vlan ' + vlanNative + '\n';
+                copyText += '!\n';
+                continue;
+            }
             copyText += '\n  switchport access vlan ' + vlanArrayText[x] + '\n';
             copyText += '!\n';
         }
